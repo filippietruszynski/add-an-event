@@ -105,3 +105,6 @@ dist
 
 # Distributable directory
 dist
+
+# Prettier
+.prettierignore
