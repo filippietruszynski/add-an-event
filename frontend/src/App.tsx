@@ -1,14 +1,17 @@
-import { ToastContainer } from "react-toastify";
+import React from "react";
+import { CssBaseline } from "@material-ui/core";
 
-import EventForm from "./components/EventForm";
+import Header from "./components/Header";
+import Main from "./components/Main";
 
 import "react-toastify/dist/ReactToastify.css";
 
 const App: React.FC = () => {
   return (
     <>
-      <EventForm />
-      <ToastContainer />
+      <Header />
+      <Main />
+      <CssBaseline />
     </>
   );
 };
