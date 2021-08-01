@@ -10,6 +10,7 @@ import { Paper } from "@material-ui/core";
 import { toast } from "react-toastify";
 
 import { IPostEventRequest } from "../../api/requests";
+import { EMAIL_REGEX } from "../../utils/helpers";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -48,7 +49,9 @@ const EventForm: React.FC<IEventFormProps> = ({ postEvent }) => {
   const validationSchema = Yup.object().shape({
     firstName: Yup.string().required("Is required"),
     lastName: Yup.string().required("Is required"),
-    email: Yup.string().email("Invalid email address").required("Is required"),
+    email: Yup.string()
+      .matches(EMAIL_REGEX, "Invalid email address")
+      .required("Is required"),
     eventDate: Yup.date().required("Is required"),
   });
 
