@@ -1,0 +1,22 @@
+{
+  "defaultSeverity": "error",
+  "extends": ["tslint:recommended", "tslint-react"],
+  "jsRules": {
+    "max-line-length": {
+      "options": [80]
+    }
+  },
+  "rules": {
+    "max-line-length": {
+      "options": [80]
+    },
+    "jsx-boolean-value": false,
+    "member-ordering": true,
+    "no-unused-expression": [true, "allow-fast-null-checks"],
+    "object-literal-key-quotes": [true, "as-needed"],
+    "jsx-wrap-multiline": false
+  },
+  "linterOptions": {
+    "format": "stylish"
+  }
+}

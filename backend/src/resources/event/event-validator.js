@@ -1,5 +1,7 @@
 import { check, validationResult } from "express-validator";
 
+import { EMAIL_REGEX } from "../../utils/helpers";
+
 const validateEvent = [
   check(["firstName", "lastName", "email", "eventDate"])
     .not()
@@ -11,7 +13,8 @@ const validateEvent = [
     .bail(),
   check("email")
     .trim()
-    .isEmail()
+    .normalizeEmail()
+    .matches(EMAIL_REGEX)
     .withMessage("Email is incorrect!")
     .bail(),
   (req, res, next) => {

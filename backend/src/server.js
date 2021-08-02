@@ -1,7 +1,7 @@
-import express from "express";
-import { json, urlencoded } from "body-parser";
-import morgan from "morgan";
 import cors from "cors";
+import express from "express";
+import morgan from "morgan";
+import { json, urlencoded } from "body-parser";
 
 import { connect } from "./database/database";
 import eventRouter from "./resources/event/event-router";
@@ -17,14 +17,11 @@ app.use(morgan("dev"));
 
 app.use("/api/event", eventRouter);
 
-// TODO: hard-coded PORT
-const port = 5000;
-
 export const start = async () => {
   try {
     await connect();
-    app.listen(port, () => {
-      console.log(`REST API on http://localhost:${port}/api`);
+    app.listen(5000, () => {
+      console.log(`Server listens on http://localhost:5000/api`);
     });
   } catch (error) {
     console.error(error.code);
