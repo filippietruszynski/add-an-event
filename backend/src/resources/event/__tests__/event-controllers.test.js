@@ -1,6 +1,6 @@
-import crudControllers from "../event-controllers";
+import { isFunction } from "lodash";
 
-import { isFunction } from "../../../utils/helpers";
+import crudControllers from "../event-controllers";
 
 describe("Event controllers", () => {
   test("Has CRUD controllers", () => {
