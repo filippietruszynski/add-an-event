@@ -1,13 +1,13 @@
 import React from "react";
+import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
-import Grid from "@material-ui/core/Grid";
+import { toast } from "react-toastify";
 import { makeStyles } from "@material-ui/core/styles";
 import { AxiosResponse } from "axios";
+import { LinearProgress, Paper } from "@material-ui/core";
 import { Formik, FormikHelpers } from "formik";
 import * as Yup from "yup";
-import { Paper } from "@material-ui/core";
-import { toast } from "react-toastify";
 
 import { IPostEventRequest } from "../../api/requests";
 import { EMAIL_REGEX } from "../../utils/helpers";
@@ -91,15 +91,15 @@ const EventForm: React.FC<IEventFormProps> = ({ postEvent }) => {
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <TextField
-                  fullWidth
                   autoFocus
+                  fullWidth
                   id="firstName"
                   name="firstName"
                   label="First Name"
                   variant="outlined"
-                  value={values.firstName}
                   onBlur={handleBlur}
                   onChange={handleChange}
+                  value={values.firstName}
                   error={touched.firstName && Boolean(errors.firstName)}
                   helperText={touched.firstName && errors.firstName}
                 />
@@ -111,9 +111,9 @@ const EventForm: React.FC<IEventFormProps> = ({ postEvent }) => {
                   name="lastName"
                   label="Last Name"
                   variant="outlined"
-                  value={values.lastName}
                   onBlur={handleBlur}
                   onChange={handleChange}
+                  value={values.lastName}
                   error={touched.lastName && Boolean(errors.lastName)}
                   helperText={touched.lastName && errors.lastName}
                 />
@@ -125,9 +125,9 @@ const EventForm: React.FC<IEventFormProps> = ({ postEvent }) => {
                   name="email"
                   label="Email Address"
                   variant="outlined"
-                  value={values.email}
                   onBlur={handleBlur}
                   onChange={handleChange}
+                  value={values.email}
                   error={touched.email && Boolean(errors.email)}
                   helperText={touched.email && errors.email}
                 />
@@ -140,14 +140,14 @@ const EventForm: React.FC<IEventFormProps> = ({ postEvent }) => {
                   label="Event Date"
                   type="date"
                   variant="outlined"
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                  value={values.eventDate}
+                  error={touched.eventDate && Boolean(errors.eventDate)}
+                  helperText={touched.eventDate && errors.eventDate}
                   InputLabelProps={{
                     shrink: true,
                   }}
-                  value={values.eventDate}
-                  onBlur={handleBlur}
-                  onChange={handleChange}
-                  error={touched.eventDate && Boolean(errors.eventDate)}
-                  helperText={touched.eventDate && errors.eventDate}
                 />
               </Grid>
             </Grid>
@@ -161,6 +161,7 @@ const EventForm: React.FC<IEventFormProps> = ({ postEvent }) => {
             >
               Add an event
             </Button>
+            {isSubmitting && <LinearProgress />}
           </form>
         )}
       </Formik>

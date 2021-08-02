@@ -1,6 +1,6 @@
 import React from "react";
-import { ToastContainer } from "react-toastify";
 import { makeStyles } from "@material-ui/core/styles";
+import { ToastContainer } from "react-toastify";
 
 import EventForm from "../EventForm";
 
