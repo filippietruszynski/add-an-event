@@ -1,7 +1,7 @@
 {
-  "name": "recruitment-task-frontend",
+  "name": "add-an-event-frontend",
   "version": "1.0.0",
-  "description": "Client side of the recruitment-task application.",
+  "description": "Client side of the add-an-event application.",
   "private": true,
   "scripts": {
     "start": "react-scripts start",

@@ -1,17 +1,17 @@
 {
-  "name": "recruitment-task",
+  "name": "add-an-event",
   "version": "1.0.0",
   "description": "Simple app that allows user to add events to the database.",
   "private": true,
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/filippietruszynski/recruitment-task.git"
+    "url": "git+https://github.com/filippietruszynski/add-an-event.git"
   },
   "bugs": {
-    "url": "https://github.com/filippietruszynski/recruitment-task/issues"
+    "url": "https://github.com/filippietruszynski/add-an-event/issues"
   },
-  "homepage": "https://github.com/filippietruszynski/recruitment-task#readme",
+  "homepage": "https://github.com/filippietruszynski/add-an-event#readme",
   "author": "Filip Pietruszyński <filippietruszynski@pm.me>",
   "license": "MIT"
 }
