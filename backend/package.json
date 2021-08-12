@@ -7,7 +7,7 @@
   "scripts": {
     "build": "babel src --out-dir dist",
     "clean": "rm -rf dist",
-    "start": "node dist/index.js --trace-warnings",
+    "start": "node --require dotenv/config dist/index.js --trace-warnings",
     "restart": "npm run clean && npm run build && npm run start",
     "start:dev": "nodemon --exec npm run restart",
     "test": "jest --forceExit --detectOpenHandles  --silent"
